@@ -1,0 +1,50 @@
+header {
+    margin-top: 22%;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+  }
+
+
+  .nav-container {
+    background-color: white;
+    border: 2px solid #d11d1d;
+    box-shadow: 0 0 5px 5px rgb(109, 33, 21);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+
+  ul.nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  ul.nav li {
+    margin: 0 10px;
+  }
+
+  ul.nav li a,
+  ul.nav li a:visited {
+    color: #000 !important;
+    text-decoration: none;
+  }
+
+  ul.nav li a:hover,
+  ul.nav li a:active {
+    color: #a7adad !important;
+  }
+
+  ul.nav li.active a {
+    color: #000 !important;
+  }
