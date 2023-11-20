@@ -1,15 +1,15 @@
 Sprintti 1 -retro:
     Todetaan paikallaolijat
-	-
+	-Atte Huikuri, Sabrina Davidsson, Roosa Nieminen, Jussi Molin, Jarkko Määttä, Lisa Törmänen
 
     Saavutettiinko sprintille asetetut tavoitteet?
-	-
+	-Tavoitteet saavutettiin.
 
     Tehtiinkö kaikki sprintin käyttäjätarinat/tehtävät?
-	-
+	-Kaikki tehtävät tehtiin
 
     Tapahtuiko sprintissä jotain poikkeamia?
-	-
+	-Ei poikkeamia
 
     Miten tiimi toimii? Mikä toimii hyvin, missä on haasteita?
 	-
