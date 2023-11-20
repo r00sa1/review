@@ -21,12 +21,12 @@ return (
      <Header />
         <div className="container">
             <Routes>
-                <Route path="./" element={<Etusivu />} />
-                <Route path="./Joulukortit" element={<Joulukortit />} />
-                <Route path="./Joululahjapaperit" element={<Joululahjapaperit />} />
-                <Route path="./Koristenauhat" element={<Koristenauhat />} />
-                <Route path="./Ostoskori" element={<Ostoskori />} />
-                <Route path="./Tekijat" element={<Tekijat />} />
+                <Route path="/" element={<Etusivu />} />
+                <Route path="/Joulukortit" element={<Joulukortit />} />
+                <Route path="/Joululahjapaperit" element={<Joululahjapaperit />} />
+                <Route path="/Koristenauhat" element={<Koristenauhat />} />
+                <Route path="/Ostoskori" element={<Ostoskori />} />
+                <Route path="/Tekijat" element={<Tekijat />} />
             </Routes>
         </div>
      
