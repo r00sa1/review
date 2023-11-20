@@ -12,16 +12,17 @@ Sprintti 1 -retro:
 	-Ei poikkeamia
 
     Miten tiimi toimii? Mikä toimii hyvin, missä on haasteita?
-	-
+	-Taskit tehtiin sovitusti ja ajallaan. Edelleen alkukankeutta, sillä aihe on uusi.
     
     Miten yksilöt ja tiimi voisi parantaa toimintaansa?
-	-
+	-Tiimi paranee opintojakson aikana, sen oppiessa enemmän teknisiä taitoja.
 
     Mitkä ovat seuraavan sprintin tavoitteet?
-	-
+	-Seuraavan sprintin tavoitteena on työskennellä entistä aktiivisemmin ja tehdä sovitut tehtävät, kuten tähänkin asti.
 
     Mitkä käyttäjätarinat/tehtävät toteutetaan seuraavassa sprintissä?
-	-
+	-Tehdä pages-kansio ja sivut eri kategorioille. Sivujen routing. Tuotekuvien lisääminen tietokantaan. 
+  Tuotteiden näyttäminen valitun tuoteryhmän perusteella. 
 
     Onko tekijöitä, jotka vaikuttavat työn tekemiseen (poissaoloja, vapaapäiviä)?
-	-
+	-Haasteita tuottaa edelleen jokaisen ryhmäläisen omat aikataulut ja työt. 
