@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css'
 import Banner from './components/Banner.js';
 import Header from './components/Header.js';
-import Etusivu from './components/Etusivu.js';
-import Joulukortit from './components/Joulukortit.js';
-import Joululahjapaperit from './components/Joululahjapaperit.js';
-import Koristenauhat from './components/Koristenauhat.js';
-import Ostoskori from './components/Ostoskori.js';
-import Tekijat from './components/Tekijat.js';
+import Etusivu from './pages/Etusivu.js';
+import Joulukortit from './pages/Joulukortit.js';
+import Joululahjapaperit from './pages/Joululahjapaperit.js';
+import Koristenauhat from './pages/Koristenauhat.js';
+import Ostoskori from './pages/Ostoskori.js';
+import Tekijat from './pages/Tekijat.js';
 import { Routes, Route } from 'react-router-dom';
 
 
