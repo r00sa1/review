@@ -8,19 +8,22 @@ export default function Header() {
       <div className="nav-container">
         <ul className="nav justify-content-center">
           <li className="nav-item">
-            <Link className="nav-link" to="/Etusivu">Etusivu</Link>
+            <Link className="nav-link" to="/">Etusivu</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">Joululahjapaperit</Link>
+            <Link className="nav-link" to="/Joululahjapaperit">Joululahjapaperit</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">Koristenauhat</Link>
+            <Link className="nav-link" to="/Koristenauhat">Koristenauhat</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">Joulukortit</Link>
+            <Link className="nav-link" to="/Joulukortit">Joulukortit</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">Ostoskori</Link>
+            <Link className="nav-link" to="/Ostoskori">Ostoskori</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/Tekijat">Tekijät</Link>
           </li>
 
         </ul>
