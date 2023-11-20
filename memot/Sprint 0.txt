@@ -1,4 +1,4 @@
-Sprintti 0:
+Sprintti 0 -retro:
     Todetaan paikallaolijat
 	-Atte Huikuri, Sabrina Davidsson, Roosa Nieminen, Jussi Molin, Jarkko Määttä, Lisa Törmänen
 
