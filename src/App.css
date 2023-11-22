@@ -17,4 +17,27 @@
     opacity: 0.75;
     border: 2px solid white;
     box-shadow: 0 0 5px 5px white;
+    display: flex;
+    justify-content: center;
 }
+
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.product-item{
+    text-align: center;
+}
+
+.product-image{
+    width: 200px;
+    height: 200px;  
+}
+
+.product-name{
+    margin-top: 5px;
+}
+
