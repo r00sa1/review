@@ -17,15 +17,19 @@
     opacity: 0.75;
     border: 2px solid white;
     box-shadow: 0 0 5px 5px white;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+
+}
+
+.otsikko{
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .product-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 30px;
 }
 
 .product-item{
@@ -35,6 +39,7 @@
 .product-image{
     width: 200px;
     height: 200px;  
+    border-radius: 50px;
 }
 
 .product-name{

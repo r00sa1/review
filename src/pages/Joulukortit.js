@@ -20,12 +20,16 @@ export default function GetKortit() {
   }, [category])
   
   return (
+    
     <div className='content'>
+      <h2 className='otsikko'>Joulukortit</h2>
       <div className='product-container'>
         {products.map(p => (
           <div key={p.id} className='product-item'>
             <img src={`${URL}${p.imageUrl}`} alt="Kuva" className='product-image' />
-            <p className='product-name'>{p.productName}</p>
+            <h3 className='product-name'>{p.productName}</h3>
+            <p>{p.price + '€'}</p>
+            <button type="button" class="btn btn-secondary">Lisää ostoskoriin</button>
           </div>
         ))}
       </div>
