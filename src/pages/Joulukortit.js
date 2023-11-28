@@ -13,13 +13,13 @@ export default function GetKortit() {
   }
 
   useEffect(() => {
-    axios.get(URL + 'products', {params: params})
-    .then(resp => setProducts(resp.data))
-    .catch(error => console.log(error.message))
-  
- 
+    axios.get(URL + 'products', { params: params })
+      .then(resp => setProducts(resp.data))
+      .catch(error => console.log(error.message))
+
+
   }, [category])
-  
+
   const addToCart = (product) => {
     const prod = shoppingCart.value.find((p) => p.id === product.id);
     if (prod) {
@@ -31,7 +31,7 @@ export default function GetKortit() {
   };
 
   return (
-    
+
     <div className='content'>
       <h2 className='otsikko'>Joulukortit</h2>
       <div className='product-container'>
@@ -42,7 +42,8 @@ export default function GetKortit() {
             <p>{p.price + '€'}</p>
             <button type='button' className='btn btn-secondary' onClick={() => addToCart(p)}>
               Lisää ostoskoriin
-            </button>          </div>
+            </button>
+          </div>
         ))}
       </div>
     </div>

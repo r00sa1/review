@@ -3,66 +3,84 @@ import { useEffect, useState } from "react";
 import { shoppingCart } from "./signals/CartSignal";
 
 
-/**
- * Simple example component for fetching and printing the products and
- * adding selected to the cart.
- */
-export default function CartExample(){
-    return(
+export default function CartExample() {
+    return (
         <div>
-            <ProductList/>   
-            <CartProductList/>    
+            <CartProductList />
         </div>
     )
 }
 
-function ProductList(){
+// Function to calculate the total price of all products in the cart
+const calculateTotal = () => {
+    return shoppingCart.value.reduce((total, product) => {
+        return total + product.count * product.price;
+    }, 0);
+};
 
+
+// Adds/updates product into the cart
+function updateProductCart(product, action) {
+    const prodIndex = shoppingCart.value.findIndex(p => p.id === product.id);
+
+    if (prodIndex !== -1) {
+        if (action === 'add') {
+            shoppingCart.value[prodIndex].count++;
+        } else if (action === 'remove' && shoppingCart.value[prodIndex].count > 0) {
+            shoppingCart.value[prodIndex].count--;
+        }
+    } else {
+        shoppingCart.value = [...shoppingCart.value, { ...product, count: 1 }];
+    }
+    shoppingCart.value = [...shoppingCart.value];
+}
+
+function ProductList() {
     const [products, setProducts] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get('/products')
-            .then((resp)=>{
+            .then((resp) => {
                 setProducts(resp.data);
             })
-            .catch (error => {
+            .catch(error => {
                 console.log(error.message);
             })
-    },[]);
+    }, []);
 
-    //Adds/updates product into the cart
-    function updateProductCart(product){
-        const prod = shoppingCart.value.find( p => p.id === product.id );
-        if( prod ){
-            prod.count++;
-            shoppingCart.value = [...shoppingCart.value];
-        }else{
-            shoppingCart.value = [...shoppingCart.value, {...product, count: 1}];
-        }
-    }
 
-    return(
+
+    return (
         <div>
-            <h2>All the products</h2>
             <ul>
-                { products.map(product => 
+                {products.map(product => (
                     <li key={product.id}>
-                        <button onClick={ () => updateProductCart(product) }>{product.productName}</button>
-                    </li>) 
-                }
+                        <span>{product.productName}</span>
+                    </li>
+                ))}
             </ul>
         </div>
     );
 }
 
-function CartProductList(){
-    return(
+function CartProductList() {
+    return (
         <div>
-            <h2>Products in the cart</h2>
-            <button onClick={()=> shoppingCart.value = []}>Empty cart</button>
+            <h2>Ostoskorin sisältö</h2>
             <ul>
-                { shoppingCart.value.map(product => <li key={product.id}><b>{product.count+"x "}</b>{product.productName}</li>) }
+                {shoppingCart.value.map((product) => (
+                    <li key={product.id}>
+                        <b>{product.count + 'x '}</b>
+                        {product.productName + ' '}
+                        {product.price}€
+                        <button onClick={() => updateProductCart(product, 'add')}>+</button>
+                        <button onClick={() => updateProductCart(product, 'remove')}>-</button>
+                    </li>
+                ))}
             </ul>
+            {/* Display the total price */}
+            <p>Yhteensä: {calculateTotal().toFixed(2)}€</p>
+            <button onClick={() => (shoppingCart.value = [])}>Tyhjennä ostoskori</button>
         </div>
     );
 }
