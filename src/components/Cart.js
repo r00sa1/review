@@ -72,7 +72,7 @@ function CartProductList() {
                     <li key={product.id}>
                         <b>{product.count + 'x '}</b>
                         {product.productName + ' '}
-                        {product.price}€
+                        {product.price + '€' + '/kpl' + ' '}
                         <button onClick={() => updateProductCart(product, 'add')}>+</button>
                         <button onClick={() => updateProductCart(product, 'remove')}>-</button>
                     </li>
