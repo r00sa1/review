@@ -2,24 +2,21 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { shoppingCart } from '../components/signals/CartSignal'
 
-
 const URL = 'http://localhost:3001/'
 
-export default function GetKortit() {
+export default function Cards({param}) {
   const [products, setProducts] = useState([])
-  const [category, setCategory] = useState('Joululahjapaperit')
+  // const [category, setCategory] = useState("Joulukortit")
 
   const params = {
-    category: category
+    category: param
   }
 
   useEffect(() => {
     axios.get(URL + 'products', { params: params })
       .then(resp => setProducts(resp.data))
       .catch(error => console.log(error.message))
-
-
-  }, [category])
+  }, [param])
 
   const addToCart = (product) => {
     const prod = shoppingCart.value.find((p) => p.id === product.id);
@@ -34,7 +31,7 @@ export default function GetKortit() {
   return (
 
     <div className='content'>
-      <h2 className='otsikko'>Joululahjapaperit</h2>
+      <h2 className='otsikko'>{param}</h2>
       <div className='product-container'>
         {products.map(p => (
           <div key={p.id} className='product-item'>
@@ -46,9 +43,9 @@ export default function GetKortit() {
             </button>
           </div>
         ))}
-
       </div>
     </div>
   );
 
 }
+
