@@ -19,6 +19,7 @@ export default function GetKortit() {
  
   }, [category])
   
+
   return (
     
     <div className='content'>
@@ -37,3 +38,4 @@ export default function GetKortit() {
   );
 
 }
+

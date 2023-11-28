@@ -32,6 +32,7 @@ export default function GetKortit() {
             <button type="button" class="btn btn-secondary">Lisää ostoskoriin</button>
           </div>
         ))}
+
       </div>
     </div>
   );

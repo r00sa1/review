@@ -1,4 +1,4 @@
-.container{
+.container {
     background-color: #1bd6d6;
     margin-top: 10em;
     padding: 5%;
@@ -9,14 +9,15 @@
     box-shadow: 0 0 5px 5px rgb(109, 33, 21);
     margin-bottom: 120px;
 }
-.content{
+
+.content {
     border-radius: inherit;
     border-color: black;
     background-color: white;
     padding: 5px;
     opacity: 0.75;
     border: 2px solid white;
-    box-shadow: 0 0 5px 5px white;
+    box-shadow: 0 0 5px 5px white;i
     text-align: center;
 
 }
@@ -46,4 +47,3 @@
 .product-name{
     margin-top: 5px;
 }
-
