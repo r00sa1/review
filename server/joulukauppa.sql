@@ -64,49 +64,49 @@ VALUES (
     );
 
 INSERT INTO
-    product (product_name, price, category)
+    product (product_name, price, image_url, category)
 VALUES (
         'Karkit ja kukat',
-        2.99,
+        2.99, 'images/joululahjapaperit/karkit_ja_kukat.png',
         'Joululahjapaperit'
     ), (
         'Kukat',
-        2.50,
+        2.50, 'images/joululahjapaperit/kukat.jpg',
         'Joululahjapaperit'
     ), (
         'Kuuset ja pipot',
-        3.50,
+        3.50, 'images/joululahjapaperit/kuuset_ja_pipot.jpg',
         'Joululahjapaperit'
     ), (
         'Oranssit paketit',
-        2.99,
+        2.99, 'images/joululahjapaperit/oranssit_paketit.jpg',
         'Joululahjapaperit'
     ), (
         'Violetit tähdet',
-        1.99,
+        1.99, 'images/joululahjapaperit/violetit_tahdet.jpg',
         'Joululahjapaperit'
     ), (
         'Glitternauha, 3m',
-        6.99,
+        6.99, 'images/koristenauhat/glitternauha.jpg',
         'Koristenauhat'
     ), (
         'Silkkinauha, 4m',
-        4.99,
+        4.99, 'images/koristenauhat/silkkinauha.jpg',
         'Koristenauhat'
     ), (
         'Villalanka, 10m',
-        2.99,
+        2.99, 'images/koristenauhat/villalanka.jpg',
         'Koristenauhat'
     ), (
         'Stay warm, 5kpl',
-        2.99,
+        2.99, 'images/joulukortit/stay_warm.png',
         'Joulukortit'
     ), (
         'Talo ja puu, 5kpl',
-        2.99,
+        2.99, 'images/joulukortit/talo_ja_puu.png',
         'Joulukortit'
     ), (
         'Talvimaisema, 5kpl',
-        2.99,
+        2.99, 'images/joulukortit/talvimaisema.jpg',
         'Joulukortit'
     );
