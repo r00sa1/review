@@ -1,40 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
-export default function Joulukortit() {
+const URL = 'http://localhost:3001/'
+
+export default function GetKortit() {
+  const [products, setProducts] = useState([])
+  const [category, setCategory] = useState("Joulukortit")
+
+  const params = {
+    category: category
+  }
+
+  useEffect(() => {
+    axios.get(URL + 'products', {params: params})
+    .then(resp => setProducts(resp.data))
+    .catch(error => console.log(error.message))
+  
+ 
+  }, [category])
+  
+
   return (
+    
     <div className='content'>
-      <div className='otsikko'>
-        <h1>Alueen otsikko</h1>
-      </div>
-      <div className='products'>
-        <h2>tuotteet</h2>
-        <div className='product-container'>
-          <div className='product'>
-            <h3>tuote 1</h3>
-            <ul>
-              <li>
-                <p>kuvaus 1</p>
-              </li>
-            </ul>
+      <h2 className='otsikko'>Joulukortit</h2>
+      <div className='product-container'>
+        {products.map(p => (
+          <div key={p.id} className='product-item'>
+            <img src={`${URL}${p.imageUrl}`} alt="Kuva" className='product-image' />
+            <h3 className='product-name'>{p.productName}</h3>
+            <p>{p.price + '€'}</p>
+            <button type="button" class="btn btn-secondary">Lisää ostoskoriin</button>
           </div>
-          <div className='product'>
-            <h3>tuote 2</h3>
-            <ul>
-              <li>
-                <p>kuvaus 2</p>
-              </li>
-            </ul>
-          </div>
-          <div className='product'>
-            <h3>tuote 3</h3>
-            <ul>
-              <li>
-                <p>kuvaus 3</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
+
 }
+
