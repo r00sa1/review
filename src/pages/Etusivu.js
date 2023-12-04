@@ -41,6 +41,7 @@ export default function Home() {
   return (
     
     <div className='content'>
+        <h2>Suosituimmat tuotteemme</h2>
       <div className='product-container'>
         {randomProducts.map(p => (
           <div key={p.id} className='product-item'>
