@@ -6,18 +6,18 @@ import Etusivu from './pages/Etusivu.js';
 import Cards from './pages/Cards.js';
 import Ostoskori from './pages/Ostoskori.js';
 import Tekijat from './pages/Tekijat.js';
+import Subtitle from './components/Subtitle.js';
 import { Routes, Route } from 'react-router-dom';
 
 
 
 function App() {
 
-
-
 return (
     <>
      <Banner />
      <Header />
+     <Subtitle />
         <div className="container">
             <Routes>
                 <Route path="/" element={<Etusivu />} />

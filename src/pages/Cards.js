@@ -29,9 +29,7 @@ export default function Cards({param}) {
   };
 
   return (
-
     <div className='content'>
-      <h2 className='otsikko'>{param}</h2>
       <div className='product-container'>
         {products.map(p => (
           <div key={p.id} className='product-item'>
