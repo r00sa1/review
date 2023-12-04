@@ -25,6 +25,10 @@ export default function Header() {
           <li className="nav-item">
             <Link className="nav-link" to="/Tekijat">Tekijät</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/Yllapito">Ylläpito</Link>
+          </li>
+
 
         </ul>
       </div>
