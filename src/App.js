@@ -7,6 +7,7 @@ import Cards from './pages/Cards.js';
 import Ostoskori from './pages/Ostoskori.js';
 import Tekijat from './pages/Tekijat.js';
 import Subtitle from './components/Subtitle.js';
+import Yllapito from './pages/Yllapito.js';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -26,6 +27,7 @@ return (
                 <Route path="/Koristenauhat" element={<Cards param='Koristenauhat'/>} />
                 <Route path="/Ostoskori" element={<Ostoskori/>} />
                 <Route path="/Tekijat" element={<Tekijat/>} />
+                <Route path="/Yllapito" element={<Yllapito />} />
             </Routes>
         </div>
      
