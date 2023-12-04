@@ -24,7 +24,10 @@ const Subtitle = () => {
     } else if (path.includes('/Tekijat')) {
       pageTitle = 'Tekijät';
       description = 'Tutustu ihmisiin meidän takana! Katso, ketkä loihtivat verkkokauppamme joulutuotteet.';
-    }
+    } else if (path.includes('/Yllapito')) {
+      pageTitle = 'Ylläpito';
+      description = 'Ylläpidä tuotteita. Täällä voit lisätä uuden tuotteen!';
+    } 
   
     return (
       <div className="subtitle">
