@@ -13,9 +13,6 @@ Sprintti 3 -retro:
 
     Miten tiimi toimii? Mikä toimii hyvin, missä on haasteita?
 	-Taskit tehtiin sovitusti ja ajallaan. 
-    
-    Miten yksilöt ja tiimi voisi parantaa toimintaansa?
-	- 
 
     Mitkä ovat seuraavan sprintin tavoitteet?
 	- Yhdistellä aiemmissa sprinteissä luodut toiminnot kokonaiseksi verkkosivuksi. 
