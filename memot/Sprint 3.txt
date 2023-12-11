@@ -1,4 +1,4 @@
-Sprintti 3 -retro:
+Sprintti 4 -retro:
     Todetaan paikallaolijat
 	-Atte Huikuri, Sabrina Davidsson, Roosa Nieminen, Lisa Törmänen, Jarkko Määttä
 

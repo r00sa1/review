@@ -23,6 +23,9 @@ export default function Header() {
             <Link className="nav-link" to="/Ostoskori">Ostoskori</Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/Palaute">Palaute</Link>
+          </li>
+          <li className="nav-item">
             <Link className="nav-link" to="/Tekijat">Tekijät</Link>
           </li>
           <li className="nav-item">

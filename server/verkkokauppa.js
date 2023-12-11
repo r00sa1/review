@@ -178,6 +178,36 @@ app.post('/order', async (req, res) => {
     }
 });
 
+/**
+ * Place reviews
+ */
+
+app.post('/reviews', async (req, res) => {
+
+    let connection;
+
+    try {
+        connection = await mysql.createConnection(conf);
+        await connection.beginTransaction();
+
+        const { rating, comment } = req.body;
+
+        const [info] = await connection.execute("INSERT INTO reviews (rating, comment) VALUES (?, ?)", [rating, comment]);
+
+        // Commit the transaction if everything is successful
+        connection.commit();
+
+        // Send a response indicating success
+        res.status(200).json({ message: 'Review submitted successfully', reviewId: info.insertId });
+    } catch (err) {
+        // Rollback the transaction in case of an error
+        connection.rollback();
+        res.status(500).json({ error: err.message });
+        // Respond with an error message
+        res.status(500).json({ error: err.message });
+    } 
+});
+
 
 //(Authentication/JWT could be done with middleware also)
 

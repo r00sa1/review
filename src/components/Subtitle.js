@@ -21,7 +21,10 @@ const Subtitle = () => {
     } else if (path.includes('/Ostoskori')) {
       pageTitle = 'Ostoskori';
       description = 'Tässä näet valitsemasi tuotteet. Tarkista tiedot ennen kuin jatkat eteenpäin.';
-    } else if (path.includes('/Tekijat')) {
+    } else if (path.includes('/Palaute')) {
+      pageTitle = 'Palaute';
+      description = 'Anna meille palautetta verkkosivuista!';
+    }else if (path.includes('/Tekijat')) {
       pageTitle = 'Tekijät';
       description = 'Tutustu ihmisiin meidän takana! Katso, ketkä loihtivat verkkokauppamme joulutuotteet.';
     } else if (path.includes('/Yllapito')) {
