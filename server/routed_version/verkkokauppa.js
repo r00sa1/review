@@ -7,6 +7,7 @@ const productRoute = require('./routes/product');
 const userRoute = require('./routes/user');
 const orderRoute = require('./routes/order');
 
+
 //Express settings
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +19,7 @@ app.use(express.static('public'));
 app.use('/', productRoute );
 app.use('/', userRoute );
 app.use('/', orderRoute );
+
 
 //Start the server
 const PORT = process.env.PORT || 3001;

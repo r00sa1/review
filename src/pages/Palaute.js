@@ -1,33 +1,48 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const URL = 'http://localhost:3001';
 
 export default function Home() {
-  // Tilamuuttujat ratingille ja kommentille
+
+  // Tilamuuttujat arvostelulle ja kommentille
   const [rating, setRating] = useState('');
   const [comment, setComment] = useState('');
+  const [reviews, setReviews] = useState([]);
 
-  // Funktio käyttäjän palautteen lähettämiseksi
-  const submitFeedback = () => {
-    if (rating.trim() === '') {
-      alert('Täytä kaikki pakolliset kentät.');
-      return;
-    }
+  /**
+ * GET-kutsu, joka hakee reviews-tietokantaan tallennetut arvostelut ja näyttää ne sivulla
+ */
+  useEffect(()=> {
+    axios.get(URL + '/reviews')
+    .then(resp => setReviews(resp.data))
+    .catch(error => console.log(error.message))
+  },[])
 
-    axios
-      .post(URL + '/reviews', {
+  // Funktio käyttäjän palautteen lähettämiseksi tietokantaan
+  const submitFeedback = async () => {
+    try {
+      if (rating.trim() === '') {
+        alert('Täytä kaikki pakolliset kentät.');
+        return;
+      }
+  
+      // POST-kutsu lähettää arvostelun ja kommentin tietokantaan "reviews"
+      // Ilmoittaa käyttäjälle, jos palautteen lähettäminen onnistui tai epäonnistui
+      await axios.post(URL + '/reviews', {
         rating: rating,
         comment: comment,
-      })
-      .then(() => {
-        console.log('Palaute lähetetty onnistuneesti');
-        alert('Palaute lähetetty onnistuneesti!');
-      })
-      .catch((error) => {
-        console.error('Palautteen lähettämisessä tapahtui virhe', error.message);
       });
+  
+      console.log('Palaute lähetetty onnistuneesti');
+      alert('Palaute lähetetty onnistuneesti!');
+    } catch (error) {
+      console.error('Palautteen lähettämisessä tapahtui virhe', error.message);
+      alert('Palautteen lähettämisessä tapahtui virhe');
+    }
   };
+  
+
 
   return (
     <div className='content'>
@@ -57,6 +72,16 @@ export default function Home() {
           Lähetä palaute
         </button>
       </form>
+
+      <div>
+        <h1>Saamamme palautteet</h1>
+        {reviews.map(p => (
+          <div key={p.id} className='review-item'>
+            <p className='review'>{p.rating}</p>
+            <p className='comment'>{p.comment}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

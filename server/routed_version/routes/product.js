@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const {getProducts, getCategoryProducts, addProducts, getCategories, addCategories} = require('../db_tools/product_db');
 
-
 /**
  * Endpoint for getting the products. 
  * Optional category query parameter for filtering only products from that category

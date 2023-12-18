@@ -6,7 +6,7 @@ const sql = {
     GET_PRODUCTS_CATEGORY: 'SELECT id, product_name productName, price, image_url imageUrl, category  FROM product WHERE category=?',
     INSERT_PRODUCTS: 'INSERT INTO product (product_name, price, image_url,category) VALUES (?,?,?,?)',
     GET_CATEGORIES: 'SELECT category_name categoryName, category_description description FROM product_category',
-    INSERT_CATEGORIES: 'INSERT INTO product_category VALUES (?,?)'
+    INSERT_CATEGORIES: 'INSERT INTO product_category VALUES (?,?)',
 }
 
 /**
@@ -83,4 +83,4 @@ async function addCategories(categories){
 }
 
 
-module.exports = {getProducts, getCategoryProducts, addProducts, getCategories, addCategories};
+module.exports = {getReviews, getProducts, getCategoryProducts, addProducts, getCategories, addCategories};

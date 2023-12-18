@@ -178,6 +178,20 @@ app.post('/order', async (req, res) => {
     }
 });
 
+app.get('/reviews', async (req, res) => {
+
+    try {
+        const connection = await mysql.createConnection(conf);
+
+        const [rows] = await connection.execute("SELECT rating, comment FROM reviews");
+
+        res.json(rows);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 /**
  * Place reviews
  */
